@@ -1,14 +1,254 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact Us | EZYTEK</title><meta name="description" content="Contact EZYTEK for ERP consultation, support, reporting, BI, AI and partnership enquiries.">
-<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/inner.css"><link rel="stylesheet" href="../assets/css/contact.css">
-</head><body data-root="../" data-page="contact">
-<header id="site-header"></header>
-<main><section class="ph"><div class="wrap"><div><nav class="bc" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Contact Us</nav><h1>Contact Us</h1><p>Consultation, support, partnership and general enquiries.</p><div class="btns"></div></div></div></section>
-<section class="sec"><div class="wrap"><div class="sh"><h2>Send us your requirement</h2><p>Share a few details and we will respond with a clear next step.</p></div><div class="cf"><form id="enq" data-endpoint="https://script.google.com/macros/s/AKfycbwrr2hepPZEjYx60eYHf14Zmk-NyVVTPRnomH05kunEMmIzK6JDVnuWeCO5bIbR3i31/exec" novalidate><div class="r2"><label>Name<input name="name" required autocomplete="name"></label><label>Company<input name="company" required autocomplete="organization"></label></div><div class="r2"><label>Business email<input type="email" name="email" required autocomplete="email"></label><label>Contact number<input type="tel" name="phone" autocomplete="tel"></label></div><div class="r2"><label>Country<select name="country"><option>Bangladesh</option><option>India</option><option>Sri Lanka</option><option>Singapore</option><option>Malaysia</option><option>Thailand</option><option>Vietnam</option><option>Indonesia</option><option>Other</option></select></label><label>Service required<select name="service" id="service"><option>Implementation</option><option>Support / AMC</option><option>Reports</option><option>BI</option><option>AI</option><option>Customization</option><option>Integration</option><option>Training</option><option>Partnership enquiry</option></select></label></div><label>Current ERP<select name="erp"><option>Sage 300</option><option>Another ERP</option><option>No ERP</option><option>Not sure</option></select></label><label>Requirement details<textarea name="details" rows="5"></textarea></label><button class="btn" type="submit">Send Enquiry</button><div class="ok" id="ok" role="status" hidden>Thank you. Your enquiry has been recorded. We will reply to your business email.</div></form>
-<aside><h3>Choose how to reach us</h3><div class="pills"><a href="?topic=consultation">Book a Consultation</a><a href="?topic=support">Request ERP Support</a><a href="?topic=report">Request a Report</a><a href="?topic=bi">Request a BI Demo</a><a href="?topic=ai">Explore AI Solutions</a><a href="?topic=partnership">Partnership Enquiry</a></div><p>Website: ezytekbd.com<br>Email, phone and WhatsApp: add approved company details here.</p><div class="note2"><p>Enquiries are used only to respond to your request. Link your privacy and data-handling statement here at launch.</p></div></aside></div></div></section></main>
-<footer id="site-footer"></footer>
-<script src="../assets/js/main.js"></script><script src="../assets/js/inner.js"></script><script src="../assets/js/contact.js"></script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us | EZYTEK</title>
+  <meta name="description" content="Contact EZYTEK for ERP consultation, support, reporting, BI, AI and partnership enquiries.">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/inner.css">
+  <link rel="stylesheet" href="../assets/css/contact.css">
+  <style>
+    /* Stylish Contact Icons Styling */
+    .quick-contact-wrap {
+      margin: 22px 0;
+    }
+    .quick-contact-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #64748b;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .social-icons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .c-icon-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #0f172a;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+    }
+    .c-icon-btn svg {
+      width: 21px;
+      height: 21px;
+      transition: transform 0.28s ease;
+    }
+    .c-icon-btn:hover {
+      transform: translateY(-4px);
+      color: #ffffff;
+    }
+    .c-icon-btn:hover svg {
+      transform: scale(1.1);
+    }
+
+    /* Individual Brand Hover Colors */
+    .c-icon-btn.web:hover {
+      background: #0d9488;
+      border-color: #0d9488;
+      box-shadow: 0 8px 18px rgba(13, 148, 136, 0.28);
+    }
+    .c-icon-btn.mail:hover {
+      background: #ea4335;
+      border-color: #ea4335;
+      box-shadow: 0 8px 18px rgba(234, 67, 53, 0.28);
+    }
+    .c-icon-btn.wa:hover {
+      background: #25d366;
+      border-color: #25d366;
+      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.28);
+    }
+    .c-icon-btn.call:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+    }
+    .c-icon-btn.sms:hover {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      box-shadow: 0 8px 18px rgba(124, 58, 237, 0.28);
+    }
+
+    /* Tooltip on Hover */
+    .c-icon-btn::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: #0f172a;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+    .c-icon-btn:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body data-root="../" data-page="contact">
+  <header id="site-header"></header>
+  <main>
+    <section class="ph">
+      <div class="wrap">
+        <div>
+          <nav class="bc" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span>Contact Us</nav>
+          <h1>Contact Us</h1>
+          <p>Consultation, support, partnership and general enquiries.</p>
+          <div class="btns"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap">
+        <div class="sh">
+          <h2>Send us your requirement</h2>
+          <p>Share a few details and we will respond with a clear next step.</p>
+        </div>
+        <div class="cf">
+          <form id="enq" data-endpoint="https://script.google.com/macros/s/AKfycbwrr2hepPZEjYx60eYHf14Zmk-NyVVTPRnomH05kunEMmIzK6JDVnuWeCO5bIbR3i31/exec" novalidate>
+            <div class="r2">
+              <label>Name<input name="name" required autocomplete="name"></label>
+              <label>Company<input name="company" required autocomplete="organization"></label>
+            </div>
+            <div class="r2">
+              <label>Business email<input type="email" name="email" required autocomplete="email"></label>
+              <label>Contact number<input type="tel" name="phone" autocomplete="tel"></label>
+            </div>
+            <div class="r2">
+              <label>Country
+                <select name="country">
+                  <option>Bangladesh</option>
+                  <option>India</option>
+                  <option>Sri Lanka</option>
+                  <option>Singapore</option>
+                  <option>Malaysia</option>
+                  <option>Thailand</option>
+                  <option>Vietnam</option>
+                  <option>Indonesia</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Service required
+                <select name="service" id="service">
+                  <option>Implementation</option>
+                  <option>Support / AMC</option>
+                  <option>Reports</option>
+                  <option>BI</option>
+                  <option>AI</option>
+                  <option>Customization</option>
+                  <option>Integration</option>
+                  <option>Training</option>
+                  <option>Partnership enquiry</option>
+                </select>
+              </label>
+            </div>
+            <label>Current ERP
+              <select name="erp">
+                <option>Sage 300</option>
+                <option>Another ERP</option>
+                <option>No ERP</option>
+                <option>Not sure</option>
+              </select>
+            </label>
+            <label>Requirement details<textarea name="details" rows="5"></textarea></label>
+            <button class="btn" type="submit">Send Enquiry</button>
+            <div class="ok" id="ok" role="status" hidden>Thank you. Your enquiry has been recorded. We will reply to your business email.</div>
+          </form>
+
+          <aside>
+            <h3>Choose how to reach us</h3>
+            <div class="pills">
+              <a href="?topic=consultation">Book a Consultation</a>
+              <a href="?topic=support">Request ERP Support</a>
+              <a href="?topic=report">Request a Report</a>
+              <a href="?topic=bi">Request a BI Demo</a>
+              <a href="?topic=ai">Explore AI Solutions</a>
+              <a href="?topic=partnership">Partnership Enquiry</a>
+            </div>
+
+            <!-- Direct Interactive Contact Icons -->
+            <div class="quick-contact-wrap">
+              <span class="quick-contact-title">Direct Connect</span>
+              <div class="social-icons-grid">
+                
+                <!-- Website -->
+                <a href="https://ezytekbdcom.netlify.app" target="_blank" rel="noopener" class="c-icon-btn web" data-tooltip="Visit Website" aria-label="Website">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </a>
+
+                <!-- Email / Gmail -->
+                <a href="mailto:cituse100@gmail.com" class="c-icon-btn mail" data-tooltip="Send Email" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/8801714090714" target="_blank" rel="noopener" class="c-icon-btn wa" data-tooltip="WhatsApp" aria-label="WhatsApp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                </a>
+
+                <!-- Phone Call -->
+                <a href="tel:+8801714090714" class="c-icon-btn call" data-tooltip="Call Now" aria-label="Phone Call">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </a>
+
+                <!-- SMS -->
+                <a href="sms:+8801714090714" class="c-icon-btn sms" data-tooltip="Send SMS" aria-label="SMS">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <line x1="9" y1="10" x2="15" y2="10"></line>
+                    <line x1="12" y1="7" x2="12" y2="13"></line>
+                  </svg>
+                </a>
+
+              </div>
+            </div>
+
+            <div class="note2">
+              <p>Enquiries are handled securely and used solely to respond to your request. View our <a href="../privacy.html">Privacy Policy</a>.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/inner.js"></script>
+  <script src="../assets/js/contact.js"></script>
+</body>
+</html>
