@@ -1,0 +1,11 @@
+/* Contact page */
+.cf{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:start}
+@media(max-width:900px){.cf{grid-template-columns:1fr}}
+.cf form{display:grid;gap:16px;background:#fff;border:1px solid var(--bd);border-top:3px solid var(--teal);border-radius:14px;padding:32px;box-shadow:0 18px 44px rgba(18,52,86,.08)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:600px){.r2{grid-template-columns:1fr}}
+.cf label{display:grid;gap:6px;font-weight:600;font-size:.9rem;color:var(--navy)}
+.cf input,.cf select,.cf textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid var(--bd);border-radius:8px;background:#fff;color:var(--tx);width:100%}
+.cf input:focus,.cf select:focus,.cf textarea:focus{outline:3px solid rgba(54,163,247,.45);border-color:var(--blue)}
+.cf button{justify-self:start;cursor:pointer;font:inherit;font-weight:600}
+.ok{background:rgba(0,166,166,.12);border:1px solid var(--teal);border-radius:10px;padding:14px 18px;color:var(--navy)}
+.cf aside h3{margin-bottom:14px}.cf aside p{margin-top:8px}
